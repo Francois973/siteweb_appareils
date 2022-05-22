@@ -1,0 +1,14 @@
+<h2>Tous les appareils disponibles prés de chez vous</h2>
+
+<div> <%= link_to "Vendez votre appareil !", new_appareil_path %></div>
+<br>
+<hr>
+<% @appareils.each do |appareil|%>
+
+    <div>Nom : <%= appareil.nom %></div>
+    <div>Caractéristiques : <%= appareil.caracteristiques %></div>
+    <div>Auteur : <%= appareil.auteur %></div>
+    <div> <%= link_to "Contacter le vendeur", appareil_path(appareil) %></div>
+    <hr>
+
+<%end%>

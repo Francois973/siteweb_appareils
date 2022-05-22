@@ -1,0 +1,32 @@
+<h1>Mettez en vente votre appareil électronique neuf dès maintenant !</h1> 
+
+ <%= form_with model: @appareil, local: true do |form|%>
+    
+        <% if @appareil.errors.any? %>
+            <h2>Une erreur est survenue</h2>
+        <ul>
+            <% @appareil.errors.full_messages.each do |msg| %>
+                <li><%= msg %> </li>
+        <%end%>
+        
+        </ul>
+    <%end%>
+    <p>
+
+        <%= form.label "Le modèle de l'appareil" %>
+        <%= form.text_field :nom %>
+        <hr>
+        <%= form.label "Les caractéristiques de l'appareil" %>
+        <%= form.text_area :caracteristiques %>
+        <hr>
+        <%= form.label "Votre nom d'utilisateur" %>
+        <%= form.text_field :auteur %>
+        <hr>
+        <p>
+        <%= form.submit "Commencer à vendre" %>
+        </p>
+
+    </p>
+
+
+ <%end%>
